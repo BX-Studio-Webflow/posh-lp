@@ -1,19 +1,21 @@
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
 <script>
-$(".swiper").append(`<div class="swiper-scrollbar"></div>`);
 $(".swiper").append(`<div class="swiper-pagination"></div>`);
-$(".swiper").append(`<div class="swiper-arrow button-prev"></div>`);
-$(".swiper").append(`<div class="swiper-arrow button-next"></div>`);
+
 const swiper1 = new Swiper(".swiper1", {
   // Optional parameters
   direction: "horizontal",
-  loop: true,
+  loop: false,
   slidesPerView: 1,
   slidesPerGroup: 1,
   spaceBetween: 20,
-  loop: false,
-  centeredSlides: false,
+  centeredSlides: true,
+  centeredSlidesBounds: true,
+  initialSlide: 1,
+  slideToClickedSlide: true,
+  autoplay: {
+   delay: 5000,
+ },
   mousewheel: {
     forceToAxis: true
   },
@@ -26,11 +28,11 @@ const swiper1 = new Swiper(".swiper1", {
     },
     // when window width is >= 768px
     768: {
-      slidesPerView: 2
+      slidesPerView: 1
     },
     // when window width is >= 992px
     992: {
-      slidesPerView: 3
+      slidesPerView: 1.5
     }
   },
   // If we need pagination
